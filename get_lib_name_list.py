@@ -4,12 +4,13 @@ LIBRARIES_IO_API_KEY = '59d8b38b16dda6e3a14018293f69e22e'
 SORT_KEYS = {'most_dep': 'dependents_count', 'most_star': 'stars', 'most_fork': 'forks'}
 wanted_language = ['rubygems', 'packagist']
 wanted_number = 2000
+token = '' # make up the token with your own one
 def get_lib_list(size, language, type):
     ret = []
     for i in range(int(size / 100) + 1):
         try:
             batch_res = requests.get(
-                f'https://libraries.io/api/search?sort={SORT_KEYS[type]}&api_key=59d8b38b16dda6e3a14018293f69e22e&platform={language}&page={str(i)}&per_page=100')
+                f'https://libraries.io/api/search?sort={SORT_KEYS[type]}&api_key={token}&platform={language}&page={str(i)}&per_page=100')
             batch_res.raise_for_status()
         except Exception as e:
             print(e)
