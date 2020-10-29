@@ -1,6 +1,5 @@
 import requests
 import json
-LIBRARIES_IO_API_KEY = '59d8b38b16dda6e3a14018293f69e22e'
 SORT_KEYS = {'most_dep': 'dependents_count', 'most_star': 'stars', 'most_fork': 'forks'}
 wanted_language = ['rubygems', 'packagist']
 wanted_number = 2000
